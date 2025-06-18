@@ -31,7 +31,7 @@ def download_audio_from_youtube(url, output_wav_path):
 def transcribe_audio(audio_path, output_path):
     """Transcribe audio file and save transcript."""
     print(f"Transcribing {audio_path} ...")
-    result = model.transcribe(audio_path)
+    result = model.transcribe(audio_path, language="en")
 
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
     with open(output_path, "w", encoding="utf-8") as f:
